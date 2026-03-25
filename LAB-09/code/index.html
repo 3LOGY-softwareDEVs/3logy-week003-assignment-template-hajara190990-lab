@@ -1,76 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!--
+    DEMO 03: Complete Portfolio Page Example
+    
+    INSTRUCTOR: Type this LIVE with students!
+    Don't just show the completed version.
+    Stop after each section to explain.
+  -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About Me page for Hajara's Sprint 02 Portfolio Website">
-  <title>About Me - Hajara</title>
+  <meta name="description" content="John Doe's portfolio - Full-stack web developer showcasing projects and skills">
+  <title>John Doe - Web Developer</title>
 </head>
 <body>
+  
+  <!-- 
+    HEADER: Top of page
+    Contains site branding and main navigation
+  -->
   <header>
-    <h1>About Me</h1>
+    <h1>John Doe</h1>
+    <p>Full-Stack Web Developer</p>
+    
+    <!-- 
+      NAV: Navigation links
+      ul > li structure is semantic for lists
+    -->
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" aria-current="page">About Me</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
+  <!--
+    MAIN: Primary content area
+    Only ONE <main> per page!
+  -->
   <main>
-    <!-- Bio Section -->
-    <section aria-labelledby="bio-heading">
-      <h2 id="bio-heading">My Story</h2>
-      <p>Hello! My name is Hajara, and I am an aspiring software developer based in Kaduna, Nigeria. My journey into coding began with a curiosity about how technology shapes our daily lives. I transitioned into software development because I wanted to build solutions that solve real problems and empower communities.</p>
-      <p>I am currently learning web development and exploring how to create accessible, user-friendly applications. My passion for technology is driven by a desire to continuously learn and grow in this ever-evolving field.</p>
-      <figure>
-        <img src="c:\Users\hayd1\OneDrive\Documents\WhatsApp Image 2025-11-11 at 11.14.05_187db1fe.jpg" alt="Portrait of Hajara smiling in front of the training class">
-        <figcaption>Me, excited to code and create!</figcaption>
-      </figure>
+    
+    <!-- 
+      SECTION: About Me
+      Thematic grouping of related content
+      ID allows anchor linking (#about)
+    -->
+    <section id="about">
+      <h2>About Me</h2>
+      <!-- 
+        IMG: Always include alt text for accessibility
+        Describe the image for screen reader users
+      -->
+      <img src="profile.jpg" alt="John Doe smiling at a coffee shop with laptop">
+      <p>
+        Hi! I'm John, a passionate web developer learning full-stack 
+        development at DevHub Bootcamp. I love solving problems with code 
+        and building solutions that help people.
+      </p>
+      <p>
+        My background is in marketing, but I decided to pursue my dream 
+        of becoming a software developer. I'm excited about creating 
+        modern, accessible web applications.
+      </p>
     </section>
 
-    <!-- Skills Section -->
-    <section aria-labelledby="skills-heading">
-      <h2 id="skills-heading">Skills</h2>
-      <h3>Technical Skills</h3>
-      <ul>
-        <li> JavaScript, HTML5,</li>
-        <li>Version Control (Git/GitHub)</li>
-        <li>Basic Node.js</li>
-      </ul>
-      <h3>Soft Skills</h3>
-      <ul>
-        <li>Problem-Solving</li>
-        <li>Collaboration & Teamwork</li>
-        <li>Adaptability</li>
-        <li>Strong Communication</li>
-      </ul>
+    <!-- 
+      SECTION: Projects
+      Another thematic grouping
+    -->
+    <section id="projects">
+      <h2>My Projects</h2>
+      
+      <!-- 
+        ARTICLE: Self-contained content
+        Could be distributed independently
+        Perfect for blog posts, project cards
+      -->
+      <article>
+        <!-- H3 because we're inside H2 section -->
+        <h3>Number Guessing Game</h3>
+        <p>
+          An interactive browser game built with vanilla JavaScript. 
+          Try to guess the secret number with helpful hints!
+        </p>
+        <ul>
+          <li>JavaScript ES6+ logic</li>
+          <li>DOM manipulation</li>
+          <li>User input validation</li>
+        </ul>
+        <a href="projects/guessing-game.html">View Project</a>
+      </article>
+
+      <article>
+        <h3>Task Manager App</h3>
+        <p>
+          A productivity application to organize daily tasks with 
+          categories, due dates, and priority levels.
+        </p>
+        <ul>
+          <li>LocalStorage persistence</li>
+          <li>Responsive design</li>
+          <li>Filter and sort features</li>
+        </ul>
+        <a href="projects/task-manager.html">View Project</a>
+      </article>
+
+      <article>
+        <h3>Weather Dashboard</h3>
+        <p>
+          Real-time weather application using OpenWeather API. 
+          Search any city to see current conditions and forecast.
+        </p>
+        <ul>
+          <li>API integration</li>
+          <li>Asynchronous JavaScript</li>
+          <li>Dynamic UI updates</li>
+        </ul>
+        <a href="projects/weather-app.html">View Project</a>
+      </article>
     </section>
 
-    <!-- Interests Section -->
-    <section aria-labelledby="interests-heading">
-      <h2 id="interests-heading">Interests</h2>
-      <p>Outside of coding, I enjoy reading novels, exploring new cultures, and volunteering in community projects. I am passionate about education and believe in using technology to make learning more accessible.</p>
+    <!-- 
+      SECTION: Contact Form
+      Demonstrates accessible form structure
+    -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Let's build something amazing together! Send me a message.</p>
+      
+      <!-- 
+        FORM: Interactive user input
+        action="/submit" (where form data goes)
+        method="POST" (how data is sent)
+      -->
+      <form action="/submit" method="POST">
+        
+        <!-- 
+          LABEL + INPUT pattern:
+          - 'for' attribute MUST match input 'id'
+          - Clicking label focuses input (accessibility)
+          - Screen readers announce label when focused
+        -->
+        <label for="name">Your Name:</label>
+        <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          placeholder="John Smith"
+          required
+        >
+        
+        <label for="email">Your Email:</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          placeholder="john@example.com"
+          required
+        >
+        <!-- 
+          type="email" provides:
+          - Browser validation (checks for @)
+          - Mobile keyboard shows @ symbol
+        -->
+        
+        <label for="message">Message:</label>
+        <textarea 
+          id="message" 
+          name="message" 
+          rows="5" 
+          placeholder="Tell me about your project..."
+          required
+        ></textarea>
+        
+        <!-- 
+          BUTTON: type="submit" triggers form submission
+          required attribute makes field mandatory
+        -->
+        <button type="submit">Send Message</button>
+      </form>
     </section>
 
-    <!-- Goals Section -->
-    <section aria-labelledby="goals-heading">
-      <h2 id="goals-heading">Goals</h2>
-      <p>My professional objectives are focused on growth and impact. Here are some of my short-term and long-term goals:</p>
-      <ol>
-        <li>Complete my portfolio website and showcase my projects.</li>
-        <li>Contribute to open-source projects to gain real-world experience.</li>
-        <li>Secure an internship or entry-level developer role.</li>
-        <li>Long-term: specialize in full-stack development and mentor new developers.</li>
-      </ol>
-    </section>
   </main>
 
+  <!-- 
+    FOOTER: Bottom of page
+    Typically contains copyright, links, contact info
+  -->
   <footer>
-    <p>&copy; 2026 Hajara. All rights reserved.</p>
-    <p><a href="contact.html">Get in touch</a></p>
+    <p>&copy; 2024 John Doe. All rights reserved.</p>
+    
+    <!-- 
+      Second NAV: Social media links
+      aria-label distinguishes from main nav
+      Helps screen reader users understand context
+    -->
+    <nav aria-label="Social Media">
+      <a href="https://github.com/johndoe" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/johndoe" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://twitter.com/johndoe" target="_blank" rel="noopener">Twitter</a>
+      <a href="mailto:john@example.com">Email</a>
+    </nav>
+    <!-- 
+      target="_blank" opens in new tab
+      rel="noopener" is security best practice
+    -->
   </footer>
+
 </body>
 </html>
+
+<!-- 
